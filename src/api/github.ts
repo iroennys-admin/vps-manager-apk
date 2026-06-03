@@ -25,7 +25,7 @@ async function req<T>(token: string, method: string, path: string, body?: any): 
 export const gh = {
   me: (token: string) => req<any>(token, 'GET', '/user'),
   createRepo: (token: string, name: string) =>
-    req<any>(token, 'POST', '/user/repos', { name, private: true, auto_init: true, description: '🖥️ VPS Manager — Windows VPS via GitHub Actions' }),
+    req<any>(token, 'POST', '/user/repos', { name, private: false, auto_init: true, description: '🖥️ VPS Manager — Windows VPS via GitHub Actions' }),
   deleteRepo: (token: string, owner: string, repo: string) =>
     req<void>(token, 'DELETE', `/repos/${owner}/${repo}`),
   getFile: (token: string, owner: string, repo: string, path: string) =>

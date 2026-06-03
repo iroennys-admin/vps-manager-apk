@@ -20,7 +20,7 @@ export async function createVps(token: string): Promise<CreateResult> {
   const repoFullName = `${owner}/${repoName}`;
 
   // 1. Crear repo privado
-  await gh.createRepo(token, repoName);
+  await gh.createRepo(token, repoName); // público — Actions gratis ilimitado con windows-latest
   await sleep(2000);
 
   // 2. Crear secret GH_TOKEN en el repo vía API
